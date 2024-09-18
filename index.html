@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        .container {
+            display: none;
+            padding: 20px;
+        }
+
+        #home, #feedback-page, #example-feedbacks {
+            display: none;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        /* Styles for the Home Page */
+        .game-list {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .game-list li {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        /* Styles for the Contact Form */
+        .contact-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .contact-form label,
+        .contact-form input[type="email"],
+        .contact-form select,
+        .contact-form textarea,
+        .contact-form input[type="file"],
+        .contact-form button {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .contact-form button {
+            background-color: #00c853;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #00a54f;
+        }
+
+        /* Feedback Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 60px auto;
+            background-color: white;
+            max-width: 1200px;
+        }
+
+        th, td {
+            padding: 5px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            nav a {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .contact-form {
+                width: 95%;
+            }
+
+            table {
+                width: 95%;
+            }
+        }
+    </style>
+
+    <script>
+        function switchPage(pageId) {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('feedback-page').style.display = 'none';
+            document.getElementById('example-feedbacks').style.display = 'none';
+
+            document.getElementById(pageId).style.display = 'block';
+        }
+
+        window.onload = function () {
+            switchPage('home');  // Set home page to display by default
+        };
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a href="javascript:void(0)" onclick="switchPage('home')">Home</a>
+        <a href="javascript:void(0)" onclick="switchPage('feedback-page')">Feedback</a>
+        <a href="javascript:void(0)" onclick="switchPage('example-feedbacks')">Example Feedbacks</a>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="container">
+        <h1>Contact Us</h1>
+		<br>
+        <ul class="game-list">
+            <img src="Pic/Pubg Mobile logo.png" width="60" height="60" border="0" alt="Pubg Mobile logo"/><li><strong>PUBG MOBILE</strong></li>
+			<br>
+			</br>
+            <img src="Pic/Ns logo.png" width="60" height="60" border="0" alt="Ns logo"/><li><strong>NEW STATE MOBILE</strong></li>
+			<br>
+			</br>
+            <img src="Pic/Bgmi logo.png" width="60" height="60" border="0" alt="Bgmi logo"/><li><strong>BGMI</strong></li>
+        </ul>
+    </div>
+
+    <!-- Feedback Form Page -->
+    <div id="feedback-page" class="container">
+        <h1>Feedback and Support</h1>
+        <div class="contact-form">
+            <form action="#">
+                <label for="email"><b>Your email address *</b></label>
+                <input type="email" id="email" placeholder="Enter your email address" required>
+
+                <label for="category"><b>Category *</b></label>
+                <select id="category" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="account">Account</option>
+                    <option value="report">Report</option>
+                    <option value="opinions-suggestions">Opinions and Suggestions</option>
+                    <option value="installing-running">Installing and Running Application</option>
+                    <option value="in-game">In-Game</option>
+                    <option value="ban-appeal">Ban Appeal</option>
+                    <option value="partner program">Partner Program</option>
+                    <option value="payment-refund">Payment and Refund</option>
+                    <option value="event">Event</option>
+                </select>
+
+                <label for="platform"><b>Platform *</b></label>
+                <select id="platform" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="android">Android</option>
+                    <option value="ios">iOS</option>
+                </select>
+
+                <label for="description"><b>Describe your problem here *</b></label>
+                <textarea id="description" rows="5" placeholder="How can we help you?" required></textarea>
+
+                <label for="file"><b>Attach Files</b> <i>(Picture/Videos)</i></label>
+                <input type="file" id="file">
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Example Feedbacks Page -->
+    <div id="example-feedbacks" class="container">
+        <h1>Game Users' Feedbacks</h1>
+        <table>
+            <tr>
+                <th>Email Address</th>
+                <th>Game</th>
+                <th>Feedback</th>
+            </tr>
+            <tr>
+                <td>Raja28***@gmail.com</td>
+                <td>Pubg Mobile</td>
+                <td>I love the game, but I would like to see improvements in the map details.</td>
+            </tr>
+            <tr>
+                <td>Monst73****@gmail.com</td>
+                <td>New State Mobile</td>
+                <td>The game is fun but crashes frequently on my device.</td>
+            </tr>
+            <tr>
+                <td>Venom34**@gmail.com</td>
+                <td>BGMI</td>
+                <td>Great gameplay, but the matchmaking takes too long.</td>
+            </tr>
+			<tr>
+			    <td>Parane93***@gmail.com</td>
+				<td>New State Mobile</td>
+				<td>Please fix game sound issue.</td>
+			</tr>
+        </table>
+    </div>
+</body>
+
+</html>
